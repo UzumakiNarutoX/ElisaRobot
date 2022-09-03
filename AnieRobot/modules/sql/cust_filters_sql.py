@@ -1,6 +1,6 @@
 import threading
 
-from sqlalchemy import Column, String, UnicodeText, Boolean, BogInteger, distinct, func
+from sqlalchemy import Column, String, UnicodeText, Boolean, BigInteger, distinct, func
 
 from AnieRobot.modules.helper_funcs.msg_types import Types
 from AnieRobot.modules.sql import BASE, SESSION
