@@ -15,15 +15,15 @@ from telegram.ext import CommandHandler, Filters
 from telegram.ext.dispatcher import run_async
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from marvel import dispatcher, updater
-from marvel.modules.disable import DisableAbleCommandHandler
-from marvel.modules.helper_funcs.chat_status import bot_admin, can_promote, user_admin, can_pin,  user_can_promote, user_can_pin, ADMIN_CACHE
-from marvel.modules.helper_funcs.extraction import extract_user
-from marvel.modules.log_channel import loggable
-from marvel.modules.sql import admin_sql as sql
-from marvel.modules.translations.strings import tld
+from AnieRobot import dispatcher, updater
+from AnieRobot.modules.disable import DisableAbleCommandHandler
+from AnieRobot.modules.helper_funcs.chat_status import bot_admin, can_promote, user_admin, can_pin,  user_can_promote, user_can_pin, ADMIN_CACHE
+from AnieRobot.modules.helper_funcs.extraction import extract_user
+from AnieRobot.modules.log_channel import loggable
+from AnieRobot.modules.sql import admin_sql as sql
+from AnieRobot.modules.translations.strings import tld
 
-from marvel.modules.connection import connected
+from FallenRobot.modules.connection import connected
 
 
 
