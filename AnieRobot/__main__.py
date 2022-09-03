@@ -23,19 +23,19 @@ from telegram.ext import CommandHandler, Filters, MessageHandler, CallbackQueryH
 from telegram.ext.dispatcher import run_async, DispatcherHandlerStop, Dispatcher
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
 
-from marvel import dispatcher, updater, TOKEN, WEBHOOK, OWNER_ID, CERT_PATH, PORT, URL, LOGGER, client
+from AnieRobot import dispatcher, updater, TOKEN, WEBHOOK, OWNER_ID, CERT_PATH, PORT, URL, LOGGER, client
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from marvel.modules import ALL_MODULES
-from marvel.modules.helper_funcs.chat_status import is_user_admin
-from marvel.modules.helper_funcs.misc import paginate_modules
-from marvel.modules.translations.strings import tld
-from marvel.modules.translations.strings import tld_help
-from marvel.modules.connection import connected
+from AnieRobot.modules import ALL_MODULES
+from AnieRobot.modules.helper_funcs.chat_status import is_user_admin
+from AnieRobot.modules.helper_funcs.misc import paginate_modules
+from AnieRobot.modules.translations.strings import tld
+from AnieRobot.modules.translations.strings import tld_help
+from AnieRobot.modules.connection import connected
 
 
 PM_START_TEXT = """Hey there! My name is {} - I'm here to help you manage your groups! Hit /help to find out more about how to use me to my full potential.
-Join my [news channel](https://t.me/TheBotsupport) to get information on all the latest updates.
+Join my [news channel](https://t.me/jarvisbot_supports) to get information on all the latest updates.
 If this bot helped you donate somthing any needed person!
 """
 
@@ -47,7 +47,7 @@ Helpful commands:
 - /help: If you are here you already used this!
 - /donate: Gives you info on how to support me and my creator.
 
-If you have any bugs or questions on how to use me, have a look at my group head to @TheBotSupports.
+If you have any bugs or questions on how to use me, have a look at my group head to @jarvisbot_supports.
  
 All commands can either be used with / or !.
 
@@ -67,7 +67,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("marvel.modules." + module_name)
+    imported_module = importlib.import_module("AnieRobot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -126,7 +126,7 @@ RANDOM_START = (
     "Why you awaked meh?",
     "Hello there how can i help you?",
     "Arey you human?",
-    "Hey I'm Coded by @noobanon",
+    "Hey I'm Coded by @Denvil_pro",
     "Are you alive ? Umm I think yes",
     "Are you stalking meh ?",
 	"Relax I'm here",
