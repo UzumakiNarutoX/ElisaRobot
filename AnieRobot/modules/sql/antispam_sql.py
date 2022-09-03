@@ -1,13 +1,13 @@
 import threading
 
-from sqlalchemy import Column, UnicodeText, Integer, String, Boolean
+from sqlalchemy import Column, UnicodeText, BigInteger, String, Boolean
 
 from AnieRobot.modules.sql import BASE, SESSION
 
 
 class GloballyBannedUsers(BASE):
     __tablename__ = "gbans"
-    user_id = Column(Integer, primary_key=True)
+    user_id = Column(BigInteger, primary_key=True)
     name = Column(UnicodeText, nullable=False)
     reason = Column(UnicodeText)
 
@@ -27,7 +27,7 @@ class GloballyBannedUsers(BASE):
 
 class GloballyMutedUsers(BASE):
     __tablename__ = "gmutes"
-    user_id = Column(Integer, primary_key=True)
+    user_id = Column(BigInteger, primary_key=True)
     name = Column(UnicodeText, nullable=False)
     reason = Column(UnicodeText)
 
