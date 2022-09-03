@@ -23,7 +23,7 @@ from AnieRobot.modules.log_channel import loggable
 from AnieRobot.modules.sql import admin_sql as sql
 from AnieRobot.modules.translations.strings import tld
 
-from FallenRobot.modules.connection import connected
+from AnieRobot.modules.connection import connected
 
 
 
