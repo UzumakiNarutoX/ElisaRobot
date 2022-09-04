@@ -8,12 +8,12 @@ import sys
 import traceback
 
 from sqlalchemy.sql.expression import text, update
-import DarlingRobot.modules.sql.users_sql as sql
+import ElisaBot.modules.sql.users_sql as sql
 from sys import argv
 from typing import Optional
 from telegram import __version__ as peler
 from platform import python_version as memek
-from DarlingRobot import (
+from ElisaBot import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -34,9 +34,9 @@ from DarlingRobot import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from DarlingRobot.modules import ALL_MODULES
-from DarlingRobot.modules.helper_funcs.chat_status import is_user_admin
-from DarlingRobot.modules.helper_funcs.misc import paginate_modules
+from ElisaBot.modules import ALL_MODULES
+from ElisaBot.modules.helper_funcs.chat_status import is_user_admin
+from ElisaBot.modules.helper_funcs.misc import paginate_modules
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -55,7 +55,7 @@ from telegram.ext import (
 )
 from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
-from DarlingRobot.modules.language import gs
+from ElisaBot.modules.language import gs
 
 
 def get_readable_time(seconds: int) -> str:
@@ -83,7 +83,7 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-DARLING_IMG = "https://telegra.ph/file/55352a84ee76e1f6b6e73.jpg"
+DARLING_IMG" "https://telegra.ph/file/fb338549a15fe00d09da9.jpg"
 
 DONATE_STRING = """Thanks But I don't want any Donations. Just Please Support Us That's all, Thank you."""
 
@@ -98,7 +98,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("DarlingRobot.modules." + module_name)
+    imported_module = importlib.import_module("ElisaBot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -206,15 +206,15 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton(text=gs(chat.id, "add_bot_to_group_button"), url="t.me/Foundingtitanbot?startgroup=new"),
+                            InlineKeyboardButton(text=gs(chat.id, "add_bot_to_group_button"), url="t.me/miselisarobot?startgroup=new"),
                         ],
                         [
                             InlineKeyboardButton(text=gs(chat.id, "help_button"), callback_data="help_back"),
-                            InlineKeyboardButton(text=gs(chat.id, "owner_button"), url="t.me/xD_Zent"),
+                            InlineKeyboardButton(text=gs(chat.id, "owner_button"), url="t.me/Denvil_pro"),
                         ],
                         [
-                            InlineKeyboardButton(text=gs(chat.id, "network_button"), url="t.me/Sovereign_Network"),
-                            InlineKeyboardButton(text=gs(chat.id, "ot_button"), url="t.me/AckermanXClan"),
+                            InlineKeyboardButton(text=gs(chat.id, "network_button"), url="t.me/Stark_Network"),
+                            InlineKeyboardButton(text=gs(chat.id, "ot_button"), url="t.me/jarvisbot_supports"),
                         ],
                         [
                             InlineKeyboardButton(
@@ -227,7 +227,7 @@ def start(update: Update, context: CallbackContext):
                 disable_web_page_preview=False,
             )
     else:
-        DARLINGSTART = "https://telegra.ph/file/abba1e3a7e38fbf096f00.jpg"
+        DARLINGSTART = "https://telegra.ph/file/fb338549a15fe00d09da9.jpg"
         first_name = update.effective_user.first_name
         update.effective_message.reply_photo(
            DARLINGSTART, caption= "<b> Hᴏɪ {} \nɪ'ᴍ ᴀʟɪᴠᴇ sɪɴᴄᴇ</b>: <code>{}</code>".format(
@@ -239,15 +239,15 @@ def start(update: Update, context: CallbackContext):
                     [[
                         InlineKeyboardButton(
                             text="• ᴏᴡɴᴇʀ •",
-                            url="t.me/xD_Zent")
+                            url="t.me/Denvil_pro")
                     ],
                     [
                         InlineKeyboardButton(
                             text="• sᴜᴘᴘᴏʀᴛ •",
-                            url="https://t.me/AckermanXClan"),
+                            url="https://t.me/jarvisbot_supports"),
                         InlineKeyboardButton(
                             text="• ʜᴇʟᴘ •",
-                            url="https://t.me/FoundingTitanBot?start=help")
+                            url="https://t.me/miselisarobot?start=help")
                     ]]))
         
                      
@@ -393,7 +393,7 @@ def help_button(update, context):
 def darling_about_callback(update, context):
     query = update.callback_query
     chat = update.effective_chat
-    if query.data == "darling_":
+    if query.data == "Elisa_":
         query.message.edit_text(
             text=gs(chat.id, "pm_about_text"),
             parse_mode=ParseMode.MARKDOWN,
@@ -401,20 +401,20 @@ def darling_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="✘ Admins ✘", callback_data="darling_admin"),
-                        InlineKeyboardButton(text=gs(chat.id, "notes_button"), callback_data="darling_notes"),
+                        InlineKeyboardButton(text="✘ Admins ✘", callback_data="Elisa_admin"),
+                        InlineKeyboardButton(text=gs(chat.id, "notes_button"), callback_data="Elisa_notes"),
                     ],
                     [
-                        InlineKeyboardButton(text=gs(chat.id, "support_chat_link_button"), callback_data="darling_support"),
-                        InlineKeyboardButton(text="✘ System ✘", callback_data="darling_credit"),
+                        InlineKeyboardButton(text=gs(chat.id, "support_chat_link_button"), callback_data="Elisa_support"),
+                        InlineKeyboardButton(text="✘ System ✘", callback_data="Elisa_credit"),
                    ],
                    [
-                       InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="darling_back"),
+                       InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="Elisa_back"),
                    ]    
                ]
             ),
         )
-    elif query.data == "darling_back":
+    elif query.data == "Elisa_back":
         first_name = update.effective_user.first_name
         uptime = get_readable_time((time.time() - StartTime))
         query.message.edit_text(
@@ -426,18 +426,18 @@ def darling_about_callback(update, context):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton(text=gs(chat.id, "about_button"), callback_data="darling_"),
+                            InlineKeyboardButton(text=gs(chat.id, "about_button"), callback_data="Elisa_"),
                         ],
                         [
                             InlineKeyboardButton(text=gs(chat.id, "help_button"), callback_data="help_back"),
-                            InlineKeyboardButton(text=gs(chat.id, "owner_button"), url="t.me/xD_Zent"),
+                            InlineKeyboardButton(text=gs(chat.id, "owner_button"), url="t.me/Denvil_pro"),
                         ],
                         [
-                            InlineKeyboardButton(text=gs(chat.id, "network_button"), url="t.me/Sovereign_Network"),
-                            InlineKeyboardButton(text=gs(chat.id, "ot_button"), url="t.me/AckermanXClan"),
+                            InlineKeyboardButton(text=gs(chat.id, "network_button"), url="t.me/Stark_Network"),
+                            InlineKeyboardButton(text=gs(chat.id, "ot_button"), url="t.me/jarvisbot_supports"),
                         ],
                         [
-                            InlineKeyboardButton(text=gs(chat.id, "add_bot_to_group_button"), url="t.me/Foundingtitanbot?startgroup=new"),
+                            InlineKeyboardButton(text=gs(chat.id, "add_bot_to_group_button"), url="t.me/miselisarobot?startgroup=new"),
                         ]
                     ]
                 ),
@@ -446,7 +446,7 @@ def darling_about_callback(update, context):
                 disable_web_page_preview=False,
         )
 
-    elif query.data == "darling_admin":
+    elif query.data == "Elisa_admin":
         query.message.edit_text(
             text=gs(chat.id, "pm_about_admin_text"),
             parse_mode=ParseMode.MARKDOWN,
@@ -454,43 +454,43 @@ def darling_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="darling_"),
+                        InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="Elisa_"),
                     ]
                 ]
             ),
         )
 
-    elif query.data == "darling_notes":
+    elif query.data == "Elisa_notes":
         query.message.edit_text(
             text=gs(chat.id, "pm_about_notes_text"),
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="darling_"),
+                        InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="Elisa_"),
                     ]
                 ]
             ),
         )
-    elif query.data == "darling_support":
+    elif query.data == "Elisa_support":
         query.message.edit_text(
             text=gs(chat.id, "pm_about_support_text"),
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text=gs(chat.id, "support_chat_link_button"), url="t.me/AckermanXClan"),
-                        InlineKeyboardButton(text=gs(chat.id, "updates_channel_link_button"), url="https://t.me/FoundingtitanUpdatesx"),
+                        InlineKeyboardButton(text=gs(chat.id, "support_chat_link_button"), url="t.me/jarvisbot_supports"),
+                        InlineKeyboardButton(text=gs(chat.id, "updates_channel_link_button"), url="https://t.me/Denvil_bots"),
                     ],
                     [
-                        InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="darling_"),
+                        InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="Elisa_"),
                     ]
                 ]
             ),
         )
 
 
-    elif query.data == "darling_credit":
+    elif query.data == "Elisa_credit":
         query.message.edit_text(
             text=gs(chat.id, "pm_about_credit_text"),
             parse_mode=ParseMode.MARKDOWN,
@@ -501,10 +501,10 @@ def darling_about_callback(update, context):
                     ],
                     [
                         InlineKeyboardButton(text="✘ Updates ✘", url="https://t.me/VortexSystemupdates"),
-                        InlineKeyboardButton(text="✘ Support ✘", url="https://t.me/VortexSystemSupport"),
+                        InlineKeyboardButton(text="✘ Support ✘", url="https://t.me/jarvisbot_supports"),
                     ],
                     [
-                        InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="darling_"),
+                        InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="Elisa_"),
                     ]
                 ]
             ),
@@ -525,7 +525,7 @@ def Source_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="darling_"),
+                        InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="Elisa_"),
                     ]
                 ]
             ),
@@ -541,18 +541,18 @@ def Source_about_callback(update, context):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton(text=gs(chat.id, "about_button"), callback_data="darling_"),
+                            InlineKeyboardButton(text=gs(chat.id, "about_button"), callback_data="Elisa_"),
                         ],
                         [
                             InlineKeyboardButton(text=gs(chat.id, "help_button"), callback_data="help_back"),
-                            InlineKeyboardButton(text=gs(chat.id, "owner_button"), url="t.me/xD_Zent"),
+                            InlineKeyboardButton(text=gs(chat.id, "owner_button"), url="t.me/Denvil_pro"),
                         ],
                         [
-                            InlineKeyboardButton(text=gs(chat.id, "network_button"), url="t.me/Sovereign_Network"),
-                            InlineKeyboardButton(text=gs(chat.id, "ot_button"), url="t.me/AckermanXClan"),
+                            InlineKeyboardButton(text=gs(chat.id, "network_button"), url="t.me/Stark_Network"),
+                            InlineKeyboardButton(text=gs(chat.id, "ot_button"), url="t.me/jarvisbot_supports"),
                         ],
                         [
-                            InlineKeyboardButton(text=gs(chat.id, "add_bot_to_group_button"), url="t.me/Foundingtitanbot?startgroup=new"),
+                            InlineKeyboardButton(text=gs(chat.id, "add_bot_to_group_button"), url="t.me/miselisarobot?startgroup=new"),
                         ]
                     ]
                 ),
@@ -840,14 +840,14 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}",              
-                f"""**Yo! Kiddo' [☮︎](https://telegra.ph/file/44d61a5c0844af1f03239.mp4), I Am Finally Alive!**""",
+                f"""**Yo! Kiddo' [☮︎](https://telegra.ph/file/fb338549a15fe00d09da9.jpg), I Am Finally Alive!**""",
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                 [
                   [                  
                        InlineKeyboardButton(
                              text="☮︎ ᴀᴅᴅ ᴍᴇ ☮︎",
-                             url="https://t.me/Foundingtitanbot?startgroup=true")
+                             url="https://t.me/miselisarobot?startgroup=true")
                      ] 
                 ]
             ),
