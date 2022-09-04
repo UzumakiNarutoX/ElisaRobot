@@ -1,1 +1,1 @@
-worker: python3 -m Elisabot
+worker: python3 -m ElisaBot
