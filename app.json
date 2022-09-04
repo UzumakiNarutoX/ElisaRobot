@@ -1,16 +1,16 @@
 {
-      "name": "Emiko Robot",
+      "name": "Elisa Robot",
       "description": "A Powerful Telegram group management bot with anime theme.",
       "keywords": [
          "telegram",
          "advance",
          "group",
          "manager",
-         "emikorobot"
+         "elisabot"
       ],
     
-   "logo":    "https://telegra.ph/file/35e56ba7eace7332356ad.jpg",  
-   "repository": "https://github.com/kennedy-ex/https://github.com/kennedy-ex/EmikoRobot",
+   "logo":    "https://telegra.ph/file/fb338549a15fe00d09da9.jpg",
+   "repository": "https://github.com/kennedy-ex/https://github.com/Anieteam/ElisaRobot",
    "addons": [
           {
          "options": {
@@ -63,12 +63,12 @@
       },
       "OWNER_USERNAME": {
          "description": "Your username without the @",
-         "value": "excrybaby"
+         "value": "denvilop"
       },
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to masha support than consider you made an enemy.",
          "required": true,
-         "value": "emikosupport"
+         "value": "jarvisbot_supports"
       },
       "MONGO_DB_URI": {
          "description": "Required for database connections.",
