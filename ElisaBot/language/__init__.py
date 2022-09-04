@@ -1,4 +1,4 @@
-from DarlingRobot.language.langs import langs
+from ElisaBot.language.langs import langs
 
 get_string = langs.get_string
 reload_strings = langs.reload_strings
