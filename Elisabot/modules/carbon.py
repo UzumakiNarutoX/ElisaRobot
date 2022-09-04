@@ -4,9 +4,9 @@ from pyrogram import __version__ as z
 from telethon import __version__ as s
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram import filters
-from EmikoRobot import pbot
-from EmikoRobot.utils.errors import capture_err
-from EmikoRobot.utils.functions import make_carbon
+from Elisabot import pbot
+from Elisabot.utils.errors import capture_err
+from Elisabot.utils.functions import make_carbon
 
 
 @pbot.on_message(filters.command("carbon"))
@@ -30,9 +30,9 @@ MEMEK = "https://telegra.ph/file/11b5922a33de9968cedfe.jpg"
 async def repo(_, message):
     await message.reply_photo(
         photo=MEMEK,
-        caption=f"""✨ **Hey I'm Emiko Robot** 
+        caption=f"""✨ **Hey I'm Elisa Robot** 
 
-**Owner repo : [sena-ex](https://t.me/excrybaby)**
+**Owner repo : [Denvil](https://t.me/Denvil_pro)**
 **Python Version :** `{y()}`
 **Library Version :** `{o}`
 **Telethon Version :** `{s}`
@@ -44,9 +44,9 @@ async def repo(_, message):
             [
                 [
                     InlineKeyboardButton(
-                        "Repo", url="https://github.com/kennedy-ex/emikorobot"), 
+                        "Repo", url="https://github.com/Anieteam/elisarobot"), 
                     InlineKeyboardButton(
-                        "Support", url="https://t.me/emikosupport")
+                        "Support", url="https://t.me/jarvisbot_supports")
                 ]
             ]
         )
