@@ -1,5 +1,5 @@
 import itertools
-import DarlingRobot.modules.sql.language_sql as sql
+import ElisaBot.modules.sql.language_sql as sql
 
 from typing import Union, List, Dict, Callable, Generator, Any
 
@@ -7,9 +7,9 @@ from collections.abc import Iterable
 from telegram.ext import CommandHandler, CallbackQueryHandler
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 
-from DarlingRobot import dispatcher
-from DarlingRobot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
-from DarlingRobot.language import get_string, get_languages, get_language
+from ElisaBot import dispatcher
+from ElisaBot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
+from ElisaBot.language import get_string, get_languages, get_language
 
 
 
